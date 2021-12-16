@@ -1,15 +1,6 @@
-/*=================================================================================*/
-/*=================================================================================*/
-/*==========================||---------------------------||========================*/
-/*==========================|| DESIGNED BY  HOSSAM HILAL ||========================*/
-/*==========================||---------------------------||========================*/
-/*====================================||------||===================================*/
-/*====================================|| 2020 ||===================================*/
-/*====================================||------||===================================*/
-/*=================================================================================*/
-/*=================================================================================*/
-
 /* fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
 @font-face {
     font-family: Roboto;
     src: url('../fonts/Roboto-Regular.eot');
@@ -49,9 +40,16 @@
     font-display: swap;
 }
 
+:root {
+  --font: Roboto;
+  --fontLight: Roboto-light;
+  --fontBlack: Roboto-Black;
+}
+
+
 /**** Init ****/
 body {
-    font-family: Roboto, sans-serif;
+    font-family: var(--font), sans-serif;
     overflow-x: hidden;
     direction: ltr;
     text-align: left;
@@ -170,7 +168,8 @@ button:focus {
 
 .menu a {
     text-transform: uppercase;
-    font: normal normal normal 14px/24px Roboto;
+    font-size: 14px;
+    line-height: 24px;
     letter-spacing: 1.62px;
     color: #58595B;
 }
@@ -439,7 +438,9 @@ button:focus {
 /*==========================||---------------------------||========================*/
 
 .pageTitle {
-    font: normal normal 100 30px/66px Roboto-light;
+    font-family: var(--fontLight);
+    font-size: 30px;
+    line-height: 66px;
     letter-spacing: 10px;
     color: #1A1A1A;
     text-transform: uppercase;
@@ -512,7 +513,8 @@ button:focus {
     margin: 0;
     padding: 0 15px;
     text-transform: uppercase;
-    font: normal normal normal 18px/26px Roboto;
+    font-size: 18px;
+    line-height: 26px;
     letter-spacing: 1.8px;
     color: #58595B;
     display: flex;
@@ -663,9 +665,12 @@ button:focus {
     position: relative;
 }
 
+.projectPage {
+    overflow: hidden;
+}
+
 .projectSlider .item {
     height: calc(100vh - 158px);
-    width: 100vw;
     background-size: cover !important;
 }
 
@@ -743,6 +748,7 @@ button:focus {
 .projectData.open .projectIcon span {
     border-color: #fff;
     border-width: 2px 2px 0 0;
+    margin: 0;
     margin-right: 8px;
 }
 
@@ -781,7 +787,8 @@ button:focus {
 }
 
 .projectPage h2 {
-    font: normal normal normal 18px/46px Roboto;
+    font-size: 18px;
+    line-height: 46px;
     letter-spacing: 7px;
 }
 
@@ -845,7 +852,8 @@ button:focus {
 
 .videosType h2 {
     transition: all .5s ease-in-out;
-    font: normal normal 100 35px/66px Roboto;
+    font-size: 35px;
+    line-height: 66px;
     letter-spacing: 10px;
     color: #FFFFFF;
     text-transform: uppercase;
@@ -910,7 +918,7 @@ button:focus {
 /*==========================||           Members         ||========================*/
 /*==========================||---------------------------||========================*/
 
-.teams .tab {
+.teams .memberInfoBox {
     display: none;
 }
 
@@ -934,13 +942,16 @@ button:focus {
 }
 
 .memberData h2 {
-    font: normal normal normal 20px/26px Roboto-light;
+    font-family: var(--fontLight);
+    font-size: 20px;
+    line-height: 26px;
     letter-spacing: 2.5px;
     text-transform: uppercase;
 }
 
-.memberData p {
-    font: normal normal 17px/35px Roboto;
+.memberDes {
+    font-size: 17px;
+    line-height: 35px;
     margin-bottom: 15px;
 }
 
@@ -978,7 +989,7 @@ button:focus {
         font-size: 15px;
     }
 
-    .memberData p {
+    .memberDes {
         font-size: 13px;
         line-height: 25px;
     }
@@ -1004,7 +1015,8 @@ button:focus {
 }
 
 .careers p {
-    font: normal normal normal 18px/30px Roboto;
+    font-size: 18px;
+    line-height: 30px;
     margin-bottom: 10px;
 }
 
@@ -1016,7 +1028,9 @@ button:focus {
 }
 
 .careers h2 {
-    font: normal normal bold 18px/60px Roboto-Black;
+    font-family: var(--fontBlack);
+    font-size: 18px;
+    line-height: 60px;
 }
 
 .careersForm {
@@ -1097,8 +1111,12 @@ button:focus {
     right: 0;
 }
 
-.uploadFile img {
-    width: 10px;
+.uploadFile .icon-upload {
+    background-image: url("../images/file.svg");
+    background-repeat: no-repeat;
+    display: inline-block;
+    width: 13px;
+    height: 24px;
 }
 
 .fileName {
@@ -1190,6 +1208,11 @@ button:focus {
     font-size: 23px;
     color: #fff;
     margin-bottom: 20px;
+    padding: 4%;
+}
+
+.service span img {
+    filter: brightness(0) invert(1);
 }
 
 .service h3 {
@@ -1251,7 +1274,7 @@ button:focus {
 .contact {
     height: calc(100vh - 158px);
     width: 100vw;
-    background: url('../images/contact.jpg') no-repeat;
+    background-repeat:  no-repeat;
     background-size: cover;
     overflow: hidden;
     position: relative;
@@ -1279,7 +1302,7 @@ button:focus {
 .contactSide h2 {
     letter-spacing: 7px;
     font-size: 20px;
-    font-family: Roboto-light;
+    font-family: var(--fontLight);
     text-transform: uppercase;
     margin-bottom: 30px;
 }
@@ -1295,9 +1318,10 @@ button:focus {
     margin-bottom: 10px;
 }
 
-.contactSide span {
+.contactSide a {
     opacity: 0.6;
     font-size: 15px;
+    color: #1D1D1D;
 }
 
 .contactGroup {
@@ -1308,7 +1332,7 @@ button:focus {
     letter-spacing: 5px;
     text-transform: uppercase;
     font-size: 15px;
-    font-family: Roboto-Black;
+    font-family: var(--fontBlack);
     margin-bottom: 15px;
 }
 
@@ -1326,25 +1350,26 @@ button:focus {
     color: #1D1D1D;
     text-transform: uppercase;
     font-size: 13px;
-    font-family: Roboto-Black;
+    font-family: var(--fontBlack);
 }
 
 .address p {
     color: #1D1D1D;
     font-size: 13px;
     font-weight: 600;
-    font-family: Roboto-Black;
+    font-family: var(--fontBlack);
 }
 
-.address span {
+.address a {
+    color: #1D1D1D;
     font-size: 14px;
     font-weight: 100;
-    font-family: 'Roboto';
+    font-family: var(--font);
     margin-inline-start: 5px;
 }
 
 .location p {
-    font-family: Roboto-Black;
+    font-family: var(--fontBlack);
     opacity: 0.6;
     font-size: 14px;
     margin-bottom: 5px;
@@ -1385,11 +1410,11 @@ button:focus {
         font-size: 12px;
     }
     
-    .address span {
+    .address a {
         font-size: 13px;
     }
     
-    .contactSide span {
+    .contactSide a {
         font-size: 13px;
     }
     
@@ -1440,7 +1465,7 @@ button:focus {
     letter-spacing: 10px;
     color: #1A1A1A;
     text-transform: uppercase;
-    font-family: Roboto-light;
+    font-family: var(--fontLight);
     font-size: 27px;
 }
 
@@ -1483,7 +1508,7 @@ button:focus {
     letter-spacing: -0.33px;
     color: #1A1A1A;
     font-size: 20px;
-    font-family: Roboto-light;
+    font-family: var(--fontLight);
     text-transform: uppercase;
     margin-bottom: 30px;
 }
@@ -1545,30 +1570,78 @@ button:focus {
     }
 }
 
-/*==========================||---------------------------||========================*/
-/*==========================||          Careers          ||========================*/
-/*==========================||---------------------------||========================*/
-
-
-
-/*==========================||---------------------------||========================*/
-/*==========================||          Volunteer        ||========================*/
-/*==========================||---------------------------||========================*/
-
-
-/*==========================||---------------------------||========================*/
-/*==========================||        Sponsorships       ||========================*/
-/*==========================||---------------------------||========================*/
-
-
 
 /*==========================||---------------------------||========================*/
 /*==========================||            AR             ||========================*/
 /*==========================||---------------------------||========================*/
 
 
+.ar {
+    direction: rtl;
+    text-align: right;
+    font-family: 'Noto Kufi Arabic', Roboto , sans-serif !important;
+
+    --font: 'Noto Kufi Arabic';
+    --fontLight: 'Noto Kufi Arabic';
+    --fontBlack: 'Noto Kufi Arabic';
+}
+
+.ar * {
+    letter-spacing: 0 !important;
+}
 
 
-/*==========================||---------------------------||========================*/
-/*==========================||            Loader        ||========================*/
-/*==========================||---------------------------||========================*/
+.ar .memberData span {
+    left: 40px;
+    right: auto;
+}
+
+.ar .article i {
+    transform: rotate(180deg);
+}
+
+.ar .projectData {
+    left: 0;
+    right: auto;
+}
+
+.ar .projectInfo {
+    transform: translateX(-200%);
+}
+
+.ar .projectPage .projectIcon span {
+    border-width: 2px 2px 0 0;
+    margin: 0;
+    margin-right: 8px;
+}
+
+.ar .projectData.open .projectIcon span {
+    margin-left: 8px;
+    border-width: 0 0 2px 2px;
+}
+
+.ar .whatsapp {
+    right: 20px;
+    left: auto;
+}
+
+.ar .contactSide {
+    left: 0;
+    right: auto;
+}
+
+.ar .field label {
+    right: 12px;
+}
+
+.ar .file {
+    flex-direction: row-reverse;
+}
+
+@media screen and (max-width:768px) {
+    .ar .memberData span  {
+        left: 15px;
+        right: auto;
+    }
+}
+
